@@ -3,6 +3,7 @@
 import {
   FolderInput,
   Loader2,
+  PencilRuler,
   RefreshCcw,
   Sparkles,
   Trash2,
@@ -196,9 +197,9 @@ export function AlgorithmDialog({
 
   return (
     <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-      <DialogTrigger>
+      <DialogTrigger asChild>
         <Button className="w-full" variant={"default"}>
-          Automatyczny plan <Sparkles />
+          Rozplanuj <PencilRuler />
         </Button>
       </DialogTrigger>
       <DialogContent className="max-h-[80vh] max-w-2xl overflow-y-auto focus:outline-none">

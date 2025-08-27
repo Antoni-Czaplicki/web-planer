@@ -74,7 +74,9 @@ function removeTitles(data: string[]): string[] {
 const scrapLecturersPage = async (url: string, authCookie: string) => {
   const response = await fetchLecturers(url, authCookie);
   if (!response.ok) {
-    logger.error("Something went wrong in fetching lecturers");
+    logger.error(
+      `Something went wrong in fetching lecturers: ${response.status}`,
+    );
     return;
   }
 
