@@ -7,6 +7,7 @@ import { format } from "date-fns/format";
 import React from "react";
 
 import { getFaculties } from "@/actions/get-faculties";
+import { AIDialog } from "@/components/ai-dialog";
 import { AlgorithmDialog } from "@/components/algo-dialog";
 import { GroupsAccordionItem } from "@/components/groups-accordion";
 import { PlanDisplayLink } from "@/components/plan-display-link";
@@ -150,6 +151,7 @@ export function AppSidebar({
             </p>
 
             <div className="flex items-center gap-2">
+              <AIDialog availableCourses={plan.courses} planId={plan.id} />
               <AlgorithmDialog
                 availableCourses={plan.courses}
                 planId={plan.id}
