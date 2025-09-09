@@ -51,7 +51,7 @@ function AnimationLogo() {
         </Link>
 
         <h1 className="mb-5 text-6xl font-bold text-blue-900 dark:text-white sm:text-5xl lg:text-7xl">
-          PLANER
+          PLANER AI
         </h1>
       </div>
     </Block>

@@ -48,7 +48,7 @@ export async function POST(request: Request) {
     const groupSummaries = c.groups
       .map(
         (g) =>
-          `${g.groupId}|${g.courseName}|${g.courseType}|${g.day}|${weekTypeMap[g.week]}|${g.startTime}-${g.endTime}|${g.spotsOccupied.toString()}/${g.spotsTotal.toString()}`,
+          `${g.groupId}|${g.courseName}|${g.courseType}|${g.day}|${weekTypeMap[g.week]}|${g.startTime}-${g.endTime}|${g.spotsOccupied.toString()}/${g.spotsTotal.toString()}|${g.averageRating?.toFixed(1) ?? "N/A"}`,
       )
       .join(", ");
     coursesLines.push(`${c.name}: ${groupSummaries}`);
@@ -92,7 +92,7 @@ Definicje pól:
 - day: PONIEDZIAŁEK, WTOREK, ŚRODA, CZWARTEK, PIĄTEK, SOBOTA, NIEDZIELA.
 - week: co tydzień (""), w tygodniach nieparzystych ("TN"), w tygodniach parzystych ("TP").
 
-Dostępne kursy i grupy (groupId|courseName|type|day|week|start-end|occupied/total):\n${grounding}`;
+Dostępne kursy i grupy (groupId|courseName|type|day|week|start-end|occupied/total|averageRanking):\n${grounding}`;
 
   const result = streamText({
     model: xai("grok-3-mini"),
