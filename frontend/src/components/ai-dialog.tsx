@@ -115,6 +115,7 @@ const buildCoursesContext = (courses: ExtendedCourse[]) =>
       spotsTotal: g.spotsTotal,
       averageRating: g.averageRating,
       isChecked: g.isChecked,
+      lecturer: g.lecturer,
     })),
   }));
 
